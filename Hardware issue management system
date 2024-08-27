@@ -1,0 +1,1778 @@
+------------------------------------------------------Home.html---------------------------------------------------------------------------
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color:white;
+                background-repeat:no-repeat;
+                background-size: cover;
+                
+            }
+            div{
+                font-family: arial;
+                font-size: 50px;
+                color:black;
+                text-shadow:2px 2px 10px black;
+            }
+            h2{
+                font-family:Montserrat;
+                font-size: 40px;
+                color:red;
+                text-shadow:2px 2px 5px red;
+            }
+            center{
+                margin:300px 0 10px;
+            }
+            
+            .header {
+            background-color:lightslategray;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header .logo {
+            font-size: 40px;
+            color:white;
+            font-weight: bold;
+        }
+        .header .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        .header .user-actions button {
+            margin-left: 10px;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            color:blue;
+            background-color:white;
+            text-shadow:2px 2px 5px blue;
+        }
+        span{
+            font-size:20px;
+            color:white;
+        } 
+        .movable-text {
+    font-size: 40px;
+    position: relative;
+    animation: moveText 10s infinite alternate;
+    color: green; /* Initial text color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+@keyframes moveText {
+    0% {
+        left: -50px;
+        color: red; /* Initial color */
+    }
+    50% {
+        left: 50px;
+        color: purple; /* Color halfway through animation */
+    }
+    100% {
+        left: -50px;
+        color: pink; /* Final color */
+    }
+}
+
+.color-changing-text {
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333; /* Initial text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    animation: colorChange 1s ease-in-out infinite alternate; /* Apply animation */
+}
+
+@keyframes colorChange {
+    0% {
+        color: #333; /* Start with initial color */
+        transform: scale(1); /* Initial scale */
+    }
+    100% {
+        color: #007bff; /* End with this color */
+        transform: scale(1.1); /* Slightly larger scale */
+    }
+}
+.logo {
+    font-size: 40px;
+    color: purple; /* Initial text color */
+    animation: changeColor 5s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color:red; /* Initial and final color */
+    }
+    50% {
+        color: green; /* Color halfway through animation */
+    }
+}
+#loginButton {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Initial text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    animation: colorChange 1s ease-in-out infinite alternate; /* Apply animation */
+}
+
+@keyframes colorChange {
+    0% {
+        color: #333; /* Start with initial color */
+        transform: scale(1); /* Initial scale */
+    }
+    100% {
+        color: #007bff; /* End with this color */
+        transform: scale(1.1); /* Slightly larger scale */
+    }
+}
+
+  
+        </style>
+    </head>
+    <body>
+        
+         <div class="header">
+             <div class="logo">
+                 <img src="fenner.jpg" style="height: 40px; width: 50px;">
+                 Ticketing Tool</div>
+    <div class="user-actions">
+        <span class="color-changing">Welcome, User</span>
+        <button id="loginButton">Login</button>
+        
+    </div>
+</div>
+        
+    <center>
+        <div class="color-changing-text">Welcome To Our Ticketing Tool</div>
+        <h2 class="movable-text">Please enter your issues and get efficient solutions</h2>
+    </center>
+        <script>
+        // JavaScript to handle button click event
+        document.getElementById("loginButton").addEventListener("click", function() {
+            window.location.href = "login.php"; // Replace with your actual login page URL
+        });
+    </script>
+    </body>
+</html>
+-----------------------login.php-----------------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .login_container {
+            background-color: #ffffff;
+            width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        input[type=text], input[type=password], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+       
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .back-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+.back-button:hover {
+    background-color:blue; /* Darker blue background on hover */
+}
+
+.back-button:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .logo {
+    font-size: 40px;
+    color: purple; /* Initial text color */
+    animation: changeColor 5s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color:red; /* Initial and final color */
+    }
+    50% {
+        color: green; /* Color halfway through animation */
+    }
+}
+.header {
+            background-color:lightslategray;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header .logo {
+            font-size: 40px;
+            color:white;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var role = document.getElementById('role').value;
+            var password = document.getElementById('password').value;
+            
+            // Validate based on role
+            if (role === 'User' && password === 'user12') {
+                // Valid user role and password, proceed to hardman.php
+                return true;
+            } else if (role === 'Admin' && password === 'admin123') {
+                // Valid admin role and password, proceed to admin.php
+                document.getElementById('loginForm').action = 'admin.php';
+                return true;
+            } else {
+                // Invalid role or password, display error message
+                alert('Invalid role or password. Please try again.');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+      <div class="header">
+          <div class="logo"><img src="fenner.jpg" style="height: 40px; width: 50px;"><!-- comment -->
+              Ticketing Tool</div>
+      </div>
+    <center>
+        <div class="login_container">
+            
+            
+            <form id="loginForm" action="hardman.php" method="POST" onsubmit="return validateForm()" >
+                <fieldset> 
+                    <legend>Login</legend>
+                <label>Role:</label>
+                <select name="role" id="role" required>
+                    <option value="">Select</option>
+                    <option value="User">User</option>
+                    <option value="Admin">Admin</option>
+                </select><br><br>
+                <label>Username:</label>
+                <input type="text" name="username" id="username" placeholder="Username" required><br><br>
+                <label>Password:</label>
+                <input type="password" name="password" id="password" placeholder="Password" required><br><br>
+                
+                <button type="submit" name="login">Login</button></fieldset>
+            </form><br> <br>
+            <button class="back-button" onclick="location.href='home.html'"><-Back</button>  
+        </div>
+        
+    </center>
+</body>
+</html>
+-----------------------------------hardman.php------------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>hardman</title>
+        <script>
+        
+        function clearData(){
+            document.getElementById("issueForm").reset();
+        }
+         function validateForm() {
+
+            var selectedStatus = document.querySelector('input[name="status"]:checked');
+            
+            if (!selectedStatus) {
+                alert('Please select a status.');
+                return false;
+            }
+
+          
+
+            // Proceed with form submission or further processing
+            alert('Request sent');
+            return true;
+         }
+    </script>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+           
+        }
+        h1 {
+            text-align: center;
+            color: #ff00ff;
+        }
+        h2 {
+            text-align: center;
+            color: black;
+        }
+        form {
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type=text], input[type=date], textarea, select {
+            width: calc(100% - 22px); /* Adjust for padding and borders */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input[type=checkbox], input[type=radio] {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+        button[type=button] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type=button]:hover {
+            background-color: #45a049;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        legend {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .back-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+.back-button:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+#logoutButton {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+#logoutButton:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+#logoutButton:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+.logo {
+    font-size: 40px;
+    color: purple; /* Initial text color */
+    animation: changeColor 5s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color:red; /* Initial and final color */
+    }
+    50% {
+        color: green; /* Color halfway through animation */
+    }
+}
+.header {
+            background-color:lightslategray;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header .logo {
+            font-size: 40px;
+            color:white;
+            font-weight: bold;
+        }
+    </style>
+    </head>
+    <body>
+          <div class="header">
+              <div class="logo"><img src="fenner.jpg" style="height: 40px; width: 50px;"><!-- comment -->
+                  Ticketing Tool</div>
+          </div>
+       <div class="container">
+            <!-- comment -->
+            
+            <h1>Welcome, <?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?></h1>
+            <h2>Raise New Issue</h2>
+            <center>
+            <form action="index.php" id="issueForm" onsubmit="return validateForm()" method="post">
+                <fieldset>
+                <legend>Issue Details</legend>
+             <!--   
+                <label>Caller Id:</label>
+                <input type="text" name="t1" id="t1" placeholder="Enter your id" required><!-- comment -->
+                
+                <label>Caller Name:</label>
+                <input type="text" name="t2" id="t2" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" readonly reqiured><!-- comment --><br><br>
+                
+                
+                <label>Department:</label>
+                <select name="dept" id="dept">
+                <option value="">Select</option>
+                <option value="Auto zone">Auto zone</option>
+                <option value="Engg">Engineering</option>
+                <option value="Finance">Finance</option>
+                <option value="FG-DOM">FG-DOM</option>
+                <option value="FG-EXP">FG-EXP</option>
+                <option value="HR">HR</option>
+                <option value="Operations">Operations</option>
+                <option value="Power Flex">Power Flex</option>
+                <option value="Quality">Quality</option> 
+                <option value="Rubber mill">Rubber Mill</option>
+                <option value="sales">Sales</option>
+                <option value="SCM">SCM</option>
+                <option value="T&D">T&D</option>
+                <option value="T&I">T&I</option>
+                <option value="technical">Technical</option>
+                <option value="technical lab">Technical lab</option>
+                <option value="V belt">V belt</option>
+                </select>
+                <br><br><br>
+                
+                <label>Date of Issued:</label>
+<input type="datetime-local" name="t4" id="t4" placeholder="Enter date of issued"  readonly required><br><br>
+<script>
+    // Function to set today's date as the default value in the date input field
+   function setDefaultDateTime() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+
+    var hh = String(today.getHours()).padStart(2, '0');
+    var min = String(today.getMinutes()).padStart(2, '0');
+    var ss = String(today.getSeconds()).padStart(2, '0');
+
+    var dateTimeString = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + min + ':' + ss;
+    document.getElementById('t4').value = dateTimeString;
+}
+
+// Call the function to set default date and time when the page loads
+setDefaultDateTime();
+
+</script>
+                
+                <label>Status:</label>
+                <input type="radio" name="status" value="Low">Low<br><br>
+                <input type="radio" name="status" value="Medium">Medium<br><br>
+                <input type="radio" name="status" value="High">High<br><br>
+                
+                <label>Category:</label>
+                <select name="s2">
+                    <option value="">Select</option>
+                    <option value="software">Software</option>
+                    <option value="hardware">Hardware</option>
+                </select><br><br>
+                
+                
+                <label>Description:</label>
+                <textarea name="Issue_discription" id="t6" placeholder="Describe the issue"></textarea><br><br>
+                
+                <label>Requirements:</label>
+                <textarea name="Requirements" id="t7" placeholder="Enter the things you need....." required></textarea><br><br>
+                
+               
+                
+                <button type="submit" name="submit_issue" onclick="showAlert()">Submit Issue</button>
+                 <button type="button" onclick="clearData()">Clear Issue</button>
+                 
+                 </fieldset>
+          
+            </form><br><br>
+            </center>
+            
+            <button class="back-button" onclick="location.href='login.php'"><-Back</button>
+            <button id="logoutButton" onclick="location.href='logout.php'">Logout</button>
+       </div>
+    </body>
+</html>
+---------------------------------------admin.php-----------------------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+   
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            transition: background-color 2s ease;
+        }
+        .container:hover{
+            background-color: #f39c12;
+        }
+        h1{
+            margin-bottom: -40px;
+            font-weight: bolder;
+            font-size: 35px;
+            color: purple;
+            text-shadow:2px 2px 5px purple;
+        }
+        .request {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .button-all {
+            padding: 30px 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 100px 20px 100px 20px;
+            font-weight: bold;
+        }
+        .button-all:hover {
+            background-color:red;
+        }
+        .button-pending {
+            padding: 30px 20px;
+            background-color: #f39c12; /* Orange */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 300px 20px 100px 20px;
+            font-weight: bold;
+        }
+        .button-pending:hover {
+            background-color: green;
+        }
+        .button-solved {
+            padding: 30px 20px;
+            background-color: #3498db; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 300px 20px 100px 20px;
+            font-weight: bold;
+        }
+        .button-solved:hover {
+            background-color: yellowgreen;
+        }
+        
+        .div1 {
+            height:600px;
+            max-width: 800px; /* Adjust the max-width as needed */
+            margin: auto;
+            background-color: lightsteelblue;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .div1:hover{
+            background-color:#009999;
+        }
+                .back-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+.back-button:hover {
+    background-color:blue; /* Darker blue background on hover */
+}
+
+.back-button:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+#logoutButton {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+#logoutButton:hover {
+    background-color: #009999; /* Darker blue background on hover */
+}
+
+#logoutButton:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+.logo {
+    font-size: 40px;
+    color: purple; /* Initial text color */
+    animation: changeColor 5s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color:red; /* Initial and final color */
+    }
+    50% {
+        color: green; /* Color halfway through animation */
+    }
+}
+.header {
+            background-color:lightslategray;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header .logo {
+            font-size: 40px;
+            color:white;
+            font-weight: bold;
+        }
+    </style>
+            
+   
+</head>
+<body>
+              <div class="header">
+                  <div class="logo"><img src="fenner.jpg" style="height: 40px; width: 50px;"><!-- comment -->
+                      Ticketing Tool</div>
+              </div><br><br>
+    <div class="div1">
+            <center>
+        <h1>Request Management</h1>
+        <button class="button-all" onclick="location.href='category.php'">All Requests</button>
+        <button class="button-pending" onclick="location.href='pending_request.php'">Pending Requests</button>
+        <button class="button-solved"  onclick="location.href='solved_request.php'" >Solved Requests</button>
+            </center>
+        </div>            
+<br><br><center>
+    <button class="back-button" onclick="location.href='login.php'"><-Back</button>  
+    <button id="logoutButton" onclick="location.href='logout.php'">Logout</button></center>
+</body>
+</html>
+-------------------------------------category.php------------------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<?php
+require_once 'index_1.php';
+$conn->select_db($db);
+
+// Default query to fetch all pending issues
+$query = "SELECT * FROM issues WHERE status_level='pending' OR status_level='solved'";
+
+// Check if form is submitted and the category is selected
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['s2'])) {
+    $category = $_POST['s2'];
+    
+    // Adjust query based on selected category
+    if ($category === 'hardware' || $category === 'software') {
+        $query = "SELECT * FROM issues WHERE category = '$category' AND status_level='pending'";
+    }
+}
+
+$result = mysqli_query($conn, $query);
+$today = date('y-m-d');
+$isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+
+// Function to handle feedback submission and display
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['feedback'])) {
+    $s_no = $_POST['s_no'];
+    $feedback = $_POST['feedback'];
+
+    // Update the database with the feedback
+    $updateQuery = "UPDATE issues SET feedback = '$feedback' WHERE s_no = $s_no";
+    mysqli_query($conn, $updateQuery);
+
+    // Fetch the updated feedback to display immediately
+    $fetchQuery = "SELECT feedback FROM issues WHERE s_no = $s_no";
+    $fetchResult = mysqli_query($conn, $fetchQuery);
+    $feedbackRow = mysqli_fetch_assoc($fetchResult);
+    $feedbackContent = htmlspecialchars($feedbackRow['feedback']); // Ensure HTML characters are escaped
+
+    // Return the feedback content as JSON response
+    echo json_encode(['feedback' => $feedbackContent]);
+    exit;
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Requests</title>
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            background-color: darkseagreen;
+        }
+        th {
+            background-color: black;
+            color: white;
+        }
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: blue;
+        }
+
+        .back-button:active {
+            background-color: #0056b3;
+        }
+
+        #solvedButton {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #solvedButton:hover {
+            background-color: #0056b3;
+        }
+
+        #solvedButton:active {
+            background-color: #0056b3;
+        }
+
+        .btn-solved {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFA500;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .btn-solved:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-solved:active {
+            background-color: #003d80;
+        }
+
+        /* Style for h2 heading */
+        h2 {
+            text-align: center;
+            color: green;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ccc;
+        }
+
+        .feedback-box {
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin-top: 5px;
+            background-color: #f9f9f9;
+        }
+        .logo {
+    font-size: 40px;
+    color: purple; /* Initial text color */
+    animation: changeColor 5s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color:red; /* Initial and final color */
+    }
+    50% {
+        color: green; /* Color halfway through animation */
+    }
+}
+.header {
+            background-color:lightslategray;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header .logo {
+            font-size: 40px;
+            color:white;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Function to show all requests
+        function showAll() {
+            var tableRows = document.querySelectorAll('#issueTable tbody tr');
+            tableRows.forEach(function(row) {
+                row.style.display = '';
+            });
+        }
+
+        // Function to filter by category
+        function filterByCategory(category) {
+            var tableRows = document.querySelectorAll('#issueTable tbody tr');
+            tableRows.forEach(function(row) {
+                var rowCategory = row.getAttribute('data-category');
+                if (category === 'all' || rowCategory === category) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Function to show feedback input field
+        function showFeedbackInput(s_no) {
+            var feedbackInput = document.getElementById('feedbackInput_' + s_no);
+            feedbackInput.style.display = 'block';
+        }
+
+        // Function to submit feedback
+        function submitFeedback(s_no) {
+            var feedback = document.getElementById('feedback_' + s_no).value.trim();
+            if (feedback !== '') {
+                // AJAX request to update feedback in database
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            // Update feedback in the table cell
+                            var response = JSON.parse(xhr.responseText);
+                            var feedbackBox = document.createElement('div');
+                            feedbackBox.className = 'feedback-box';
+                            feedbackBox.textContent = response.feedback;
+
+                            // Find the appropriate cell and append the feedback box
+                            var feedbackCell = document.getElementById('feedbackCell_' + s_no);
+                            feedbackCell.innerHTML = ''; // Clear previous content
+                            feedbackCell.appendChild(feedbackBox);
+
+                            // Hide the feedback input after submission
+                            var feedbackInput = document.getElementById('feedbackInput_' + s_no);
+                            feedbackInput.style.display = 'none';
+                        } else {
+                            console.log('Error: ' + xhr.status);
+                        }
+                    }
+                };
+                xhr.open('POST', '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                var params = 's_no=' + s_no + '&feedback=' + encodeURIComponent(feedback);
+                xhr.send(params);
+            }
+        }
+        
+        // Ensure all rows are shown initially
+        window.onload = function() {
+            showAll();
+        };
+    </script>
+</head>
+<body>
+              <div class="header">
+                  <div class="logo"><img src="fenner.jpg" style="height: 40px; width: 50px;"><!-- comment -->
+                      Ticketing Tool</div>
+          </div>
+    <h2>All Requests of <?php echo $today; ?></h2>
+    <center>
+        <!-- Form to select category -->
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <label>Category:</label>
+            <select name="s2" onchange="filterByCategory(this.value);">
+                <option value="all">All</option>
+                <option value="software">Software</option>
+                <option value="hardware">Hardware</option>
+            </select>
+            <input type="submit" style="display: none;">
+        </form>
+    </center>
+    <br><br>
+    <!-- Table to display all pending requests -->
+    <table id="issueTable">
+        <thead>
+            <tr>
+                <th>Serial No</th>
+                <th>Caller Name</th>
+                <th>Department</th>
+                <th>Date of Issue</th>
+                <th>Status</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Requirements</th>
+                <th>Status Level</th>
+                <th>Action</th>
+                <?php if ($isAdmin): ?>
+                    <th>Feedback</th>
+                <?php endif; ?>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // PHP code to fetch and display all pending issues
+            while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <tr data-category="<?php echo $row['category']; ?>">
+                    <td><?php echo $row['s_no']; ?></td>
+                    <td><?php echo $row['caller_name']; ?></td>
+                    <td><?php echo $row['department']; ?></td>
+                    <td><?php echo $row['created_at']; ?></td>
+                    <td><?php echo $row['status']; ?></td>
+                    <td><?php echo $row['category']; ?></td>
+                    <td><?php echo $row['description']; ?></td>
+                    <td><?php echo $row['requirements']; ?></td>
+                    <td><?php echo $row['status_level']; ?></td>
+                    
+                    <td>
+                        <button onclick="showFeedbackInput(<?php echo $row['s_no']; ?>)">Add Feedback</button>
+                        <div id="feedbackInput_<?php echo $row['s_no']; ?>" style="display: none;">
+                            <textarea id="feedback_<?php echo $row['s_no']; ?>" rows="3" cols="30"></textarea>
+                            <br>
+                            <button onclick="submitFeedback(<?php echo $row['s_no']; ?>)">OK</button>
+                        </div>
+                        <div id="feedbackCell_<?php echo $row['s_no']; ?>">
+                            <?php if (!empty($row['feedback'])): ?>
+                                <div class="feedback-box"><?php echo htmlspecialchars($row['feedback']); ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+        </tbody>
+    </table>
+    <br><br>
+    <button class="back-button" onclick="location.href='admin.php'"><- Back</button>
+</body>
+</html>
+
+<?php
+$conn->close();
+?>
+--------------------------------------pending_requets.php----------------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+
+<?php
+
+// Include your database connection file (adjust path as needed)
+include 'index_1.php';
+
+$today=date('y-m-d');
+
+
+
+$conn->select_db($db);
+// SQL query to fetch all records from the 'harwar_issues' table
+$sqla = "SELECT * FROM issues WHERE  status_level='pending'";
+
+// Execute the query
+$resulta = $conn->query($sqla);
+if ($resulta === false) {
+    die("Error executing query: " . $conn->error);
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Requests</title>
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            background-color:light red;
+        }
+        th {
+            background-color:black;
+            color:white;
+        }
+        .back-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+.back-button:hover {
+    background-color:blue; /* Darker blue background on hover */
+}
+
+.back-button:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+        #solvedButton {
+    background-color:#FFA500  ; 
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+#solvedButton:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+#solvedButton:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+.btn-solved {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFA500;
+    color: white;
+    text-decoration: none; /* Remove underline */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn-solved:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+.btn-solved:active {
+    background-color: #003d80; /* Even darker blue when button is pressed */
+}
+/* Style for h2 heading */
+h2 {
+    text-align: center; /* Center align the text */
+    color: yellowgreen; /* Text color */
+    font-size: 24px; /* Font size */
+    margin-bottom: 20px; /* Bottom margin */
+    padding-top: 20px; /* Top padding */
+    border-top: 2px solid #ccc; /* Top border */
+}
+.logo {
+    font-size: 40px;
+    color: purple; /* Initial text color */
+    animation: changeColor 5s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color:red; /* Initial and final color */
+    }
+    50% {
+        color: green; /* Color halfway through animation */
+    }
+}
+.header {
+            background-color:lightslategray;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header .logo {
+            font-size: 40px;
+            color:white;
+            font-weight: bold;
+        }
+
+    </style>
+    
+    <script>
+function markAsSolved(s_no) {
+    // Implement your logic here to mark the issue as solved
+    // You might want to use AJAX to update the database and then refresh the table
+    alert('Issue ' + s_no + ' marked as solved.');
+    fetch('mark_')
+}
+
+</script>
+</head>
+<body>
+              <div class="header">
+                  <div class="logo"><img src="fenner.jpg" style="height: 40px; width: 50px;"><!-- comment -->
+                      Ticketing Tool</div>
+          </div>
+    <h2>Pending Requests</h2>
+    <table>
+        
+     
+<tr>
+    <th>serial.no</th>
+            
+            <th>Caller Name</th>
+            <th>Department</th>
+            <th>Date of Issue</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Requirements</th>
+            <th>status level</th>
+         
+        </tr>
+        
+        <tr>
+<?php
+    while ($row = mysqli_fetch_assoc($resulta)) {
+        ?>
+                <td><?php echo $row['s_no'];?> </td>
+                
+                <td><?php echo $row['caller_name'];?></td>
+                <td><?php echo $row['department'];?></td>
+                <td><?php echo $row['created_at'];?></td>
+                <td><?php echo $row['status'];?></td>
+                <td><?php echo $row['category'];?></td>
+                <td><?php echo $row['description'];?></td>
+                <td><?php echo $row['requirements'];?></td>
+                    
+                  <td>
+    <form action="updatedb.php" method="post">
+        <input type="hidden" name="s_no" value="<?php echo $row['s_no']; ?>">
+        <button id="solvedButton" name="MarkAsSolved" class="btn-solved" type="submit">Mark as Solved</button>
+    </form>
+</td>
+        </tr>
+      <?php 
+    }
+    
+    ?>
+    </table>
+<?php
+$conn->close();
+?>
+
+        <br><br>
+            <button class="back-button" onclick="location.href='category.php'"><-Back</button>
+        </div>
+    </body>
+</html> 
+---------------------------------------------solved_requests.php-------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<?php
+include 'index.php';
+$conn->select_db($db);
+$sqls = "SELECT * FROM issues WHERE status_level='solved'";
+$results= $conn->query($sqls);
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Requests</title>
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            background-color: lightseagreen;
+        }
+        th {
+            background-color: black;
+            color:white;
+        }
+        .back-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
+
+.back-button:hover {
+    background-color:blue;/* Darker blue background on hover */
+}
+
+.back-button:active {
+    background-color: #0056b3; /* Darker blue background when button is pressed */
+}
+/* Style for h2 heading */
+h2 {
+    text-align: center; /* Center align the text */
+    color: blue; /* Text color */
+    font-size: 24px; /* Font size */
+    margin-bottom: 20px; /* Bottom margin */
+    padding-top: 20px; /* Top padding */
+    border-top: 2px solid #ccc; /* Top border */
+}
+.logo {
+    font-size: 40px;
+    color: purple; /* Initial text color */
+    animation: changeColor 5s infinite;
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color:red; /* Initial and final color */
+    }
+    50% {
+        color: green; /* Color halfway through animation */
+    }
+}
+.header {
+            background-color:lightslategray;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header .logo {
+            font-size: 40px;
+            color:white;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+              <div class="header">
+                  <div class="logo"><img src="fenner.jpg" style="height: 40px; width: 50px;"><!-- comment -->
+                      Ticketing Tool</div>
+          </div>
+    <h2>Solved Requests</h2>
+    <table>
+           <tr>
+               <th>serial:no</th>
+           
+            <th>Caller Name</th>
+            <th>Department</th>
+            <th>Date of Issue</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Requirements</th>
+            <th>Date Closed</th>
+         
+        </tr>
+        
+        <tr>
+<?php
+    while ($row = mysqli_fetch_assoc($results)) {
+        ?>
+                <td><?php echo $row['s_no'];?> </td>
+                
+                <td><?php echo $row['caller_name'];?></td>
+                <td><?php echo $row['department'];?></td>
+                <td><?php echo $row['created_at'];?></td>
+                <td><?php echo $row['status'];?></td>
+                <td><?php echo $row['category'];?></td>
+                <td><?php echo $row['description'];?></td>
+                <td><?php echo $row['requirements'];?></td>
+                <td><?php echo $row['solved_at'];?></td>
+                    
+                    
+        </tr>
+      <?php 
+    }
+    
+    ?>
+    </table>
+<?php
+$conn->close();
+?>
+
+        <br><br>
+            <button class="back-button" onclick="location.href='category.php'"><-Back</button>
+        </div>
+    </body>
+</html> 
+-----------------------------------------updatedb.php-------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<?php
+// updatedb.php
+date_default_timezone_set('Asia/Kolkata');
+
+// Include your database connection file (adjust path as needed)
+require_once 'index_1.php';
+$conn->select_db($db);
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['MarkAsSolved'])) {
+    // Check if 's_no' parameter exists in POST
+    if (isset($_POST['s_no'])) {
+        $s_no = $_POST['s_no'];
+        $solved_at = date('Y-m-d H:i:s'); // Format: YYYY-MM-DD HH:MM:SS
+        
+        // Prepare update statement with placeholders
+        $update_sql = "UPDATE issues SET status_level = 'solved', solved_at = ? WHERE s_no = ?";
+        
+        // Prepare and bind parameters
+        $stmt = $conn->prepare($update_sql);
+        $stmt->bind_param("si", $solved_at, $s_no); // 's' for string, 'i' for integer
+        
+        // Execute update
+        if ($stmt->execute()) {
+            // Redirect back to the original page
+            header("Location: solved_request.php");
+            exit();
+        } else {
+            echo "Error updating record: " . $conn->error;
+        }
+        
+        // Close statement
+        $stmt->close();
+    } else {
+        echo "No 's_no' parameter received.";
+    }
+} else {
+    echo "Invalid request method or 'MarkAsSolved' parameter not set.";
+}
+
+// Close connection
+$conn->close();
+?>
+-------------------------------------------index.php-------------------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$db = "Ticketing_tool";
+
+// Create connection
+$conn = new mysqli($hostname, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Select database
+if (!$conn->select_db($db)) {
+    die("Database selection failed: " . $conn->error);
+}
+
+/*
+// Select database
+if (!$conn->select_db($db)) {
+    die("Database selection failed: " . $conn->error);
+}
+
+// Define SQL statement for creating table
+$sql_table = "CREATE TABLE issues (
+    s_no INT AUTO_INCREMENT PRIMARY KEY,
+    
+    caller_name VARCHAR(100),
+    department VARCHAR(100),
+    date_issued TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50),
+    category VARCHAR(100),
+    description TEXT,
+    requirements TEXT,
+    status_level ENUM('pending','solved') DEFAULT 'pending',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    solved_at DATETIME
+)";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table created successfully.";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+// Close connection
+
+
+
+/*
+// Alter table to add solved_at column with TIMESTAMP type and default current timestamp
+$sql_table = "
+ALTER TABLE issue_s
+MODIFY COLUMN solved_at DATETIME";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+
+$sql_table = "
+ALTER TABLE issue_s
+MODIFY COLUMN date_issued TIMESTAMP DEFAULT CURRENT_TIMESTAMP";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+// Close connection
+$sql_reset_auto_increment = "ALTER TABLE issue_s AUTO_INCREMENT = 1";
+
+// Execute query
+$result = $conn->query($sql_reset_auto_increment);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+$sql_table="CREATE TABLE issues (
+    s_no INT AUTO_INCREMENT PRIMARY KEY,
+    caller_id INT AUTO_INCREMENT,
+    caller_name VARCHAR(100),
+    department VARCHAR(100),
+    date_issued timestamp default current timestamp(),
+    status VARCHAR(50),
+    category VARCHAR(100),
+    description TEXT,
+    requirements TEXT,
+    status_level ENUM('pending','solved') default pending,
+    created_at datetime current timestamp(),
+    solved_at datetime
+    
+)";
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table created successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+$sql_table = "
+ALTER TABLE issues
+ADD COLUMN feedback text";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+$conn->close();*/
+?>
+--------------------------------------index_1.php--------------------------------------------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$db = "Ticketing_tool";
+
+// Create connection
+$conn = new mysqli($hostname, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Select database
+if (!$conn->select_db($db)) {
+    die("Database selection failed: " . $conn->error);
+}
+
+/*
+// Select database
+if (!$conn->select_db($db)) {
+    die("Database selection failed: " . $conn->error);
+}
+
+// Define SQL statement for creating table
+$sql_table = "CREATE TABLE issues (
+    s_no INT AUTO_INCREMENT PRIMARY KEY,
+    
+    caller_name VARCHAR(100),
+    department VARCHAR(100),
+    date_issued TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50),
+    category VARCHAR(100),
+    description TEXT,
+    requirements TEXT,
+    status_level ENUM('pending','solved') DEFAULT 'pending',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    solved_at DATETIME
+)";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table created successfully.";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+// Close connection
+
+
+
+/*
+// Alter table to add solved_at column with TIMESTAMP type and default current timestamp
+$sql_table = "
+ALTER TABLE issue_s
+MODIFY COLUMN solved_at DATETIME";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+
+$sql_table = "
+ALTER TABLE issue_s
+MODIFY COLUMN date_issued TIMESTAMP DEFAULT CURRENT_TIMESTAMP";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+// Close connection
+$sql_reset_auto_increment = "ALTER TABLE issue_s AUTO_INCREMENT = 1";
+
+// Execute query
+$result = $conn->query($sql_reset_auto_increment);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+$sql_table="CREATE TABLE issues (
+    s_no INT AUTO_INCREMENT PRIMARY KEY,
+    caller_id INT AUTO_INCREMENT,
+    caller_name VARCHAR(100),
+    department VARCHAR(100),
+    date_issued timestamp default current timestamp(),
+    status VARCHAR(50),
+    category VARCHAR(100),
+    description TEXT,
+    requirements TEXT,
+    status_level ENUM('pending','solved') default pending,
+    created_at datetime current timestamp(),
+    solved_at datetime
+    
+)";
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table created successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+$sql_table = "
+ALTER TABLE issues
+ADD COLUMN feedback text";
+
+// Execute query
+$result = $conn->query($sql_table);
+
+// Check if query was successful
+if ($result) {
+    echo "Table altered successfully.";
+} else {
+    echo "Error altering table: " . $conn->error;
+}
+$conn->close();*/
+?>
+------------------------------------------------logout.php-----------------------------
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
+<?php
+
+session_start();
+session_unset();
+session_destroy();
+header("Location:home.html");
+exit();
+?>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
